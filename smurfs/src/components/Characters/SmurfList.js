@@ -4,7 +4,7 @@ import SmurfCard from './SmurfCard';
 import SmurfContext from '../../contexts/SmurfContext';
 
 const SmurfList = () => {
-    const smurf = useContext(SmurfContext);
+    const { smurf } = useContext(SmurfContext);
 
     return (
         <div className="smurf-list">

@@ -5,13 +5,14 @@ import axios from 'axios';
 
 import SmurfContext from '../contexts/SmurfContext';
 import SmurfList from './Characters/SmurfList';
+import SmurfForm from "./Characters/SmurfForm";
 
 const App = () => {
   const [smurf, setSmurf] = useState([]);
 
-  // const addSmurf = smurfs => {
-  //   setSmurf([...smurf, smurfs])
-  // };
+  const addSmurf = smurfs => {
+    setSmurf([...smurf, smurfs])
+  };
 
   useEffect(() => {
     axios
@@ -27,8 +28,9 @@ const App = () => {
 
   return (
     <div className="App">
-      <SmurfContext.Provider value={smurf}>
+      <SmurfContext.Provider value={{ smurf, addSmurf }}>
         <SmurfList />
+        <SmurfForm />
       </SmurfContext.Provider>
     </div>
   );
