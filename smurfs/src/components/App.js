@@ -10,8 +10,19 @@ import SmurfForm from "./Characters/SmurfForm";
 const App = () => {
   const [smurf, setSmurf] = useState([]);
 
-  const addSmurf = smurfs => {
-    setSmurf([...smurf, smurfs])
+  // const addSmurf = smurfs => {
+  //   setSmurf([...smurf, smurfs])
+  // };
+
+  const addSmurf = smurf => {
+    axios
+      .post('http://localhost:3333/smurfs', smurf)
+      .then(response => {
+        setSmurf(response.data);
+      })
+      .catch(error => {
+        console.log(error)
+      })
   };
 
   useEffect(() => {

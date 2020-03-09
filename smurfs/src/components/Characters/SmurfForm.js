@@ -36,7 +36,7 @@ const SmurfForm = () => {
                 />
                 <label>Height:</label>
                 <input
-                    name="Height"
+                    name="height"
                     type="type"
                     placeholder="Height..."
                     onChange={handleChange}
